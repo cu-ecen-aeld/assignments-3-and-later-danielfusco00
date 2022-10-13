@@ -1,7 +1,7 @@
 CC=gcc
 
-all: writer.c
-	$(CC) -Wall writer.c -o writer.o
+all: writer
+	$(CC) -Wall writer.c -o writer
 
 clean:
-	rm *.o
+	rm -f *.o all

@@ -21,6 +21,7 @@ int main(int argc, char **argv)
     {
     	syslog(LOG_ERR,"Invalid Number of arguments: %d", argc-1);
     	printf("Invalid Number of arguments: %d\n", argc-1);
+    	return 1;
     }
     else
     {
@@ -29,12 +30,14 @@ int main(int argc, char **argv)
         if (file == NULL)
         {
              syslog(LOG_ERR,"ERRO: File %s not created", argv[1]);
+             return 1;
         }
         else
         {
              fputs(argv[2],file);
              fclose(file);
              syslog(LOG_DEBUG,"The string %s was written to the file: %s.", argv[2], argv[1]);
+             //return 0;
         }
     }
     
